@@ -1,5 +1,5 @@
 class Graph:
-
+    
     def __init__(self, n: int, edges: List[List[int]]):
         self.adj = [[0 for i in range(n)] for j in range(n)]
         for e in edges:
@@ -7,7 +7,8 @@ class Graph:
 
     def addEdge(self, edge: List[int]) -> None:
         self.adj[edge[0]][edge[1]] = edge[2]
-
+        
+    #not optimal - better to implement floyd-warshall
     def shortestPath(self, node1: int, node2: int) -> int:
         distTo = [float('inf') for _ in range(len(self.adj))]
         distTo[node1] = 0
